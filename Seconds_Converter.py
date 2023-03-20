@@ -1,12 +1,12 @@
-# This basic program is a conversion of seconds: you enter with integer number and receive
-# its larger time magnitude values as for example: decades, days, hours.
+# This basic program is a seconds converter: you enter with integer number and receive its larger time magnitude
+                                                                        #values as for example: decades, days, hours.
 
 
 def main():
 
     start = int(input(f'Please, enter with integer number for conversion: '))
 
-    century = start // 3155760000  # -> seconds in one day (SID) multiplied per 36525 ((365 * 10) + 25)
+    century = start // 3155760000  # -> seconds in one day (as SID) multiplied per 36525 ((365 * 10) + 25)
     decade = (start % 3155760000) // 315352800  # -> SID  multiplied per 3652 ((365 * 10) + 2)
     year = ((start % 3155760000) % 315352800) // 31536000  # -> SID  multiplied per 365
     month = (((start % 3155760000) % 315352800) % 31536000) // 2626560  # -> SID multiplied per 30.4 (365/12)
