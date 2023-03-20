@@ -1,0 +1,3 @@
+Hello! This project is a basic program Python for conversion of seconds:
+you enter with integer number and receive its larger time magnitude
+values as for example: decades, days, hours, etc...
