@@ -23,8 +23,8 @@ def main():
     except ValueError:
         print('Could not run the code correctly. Did you enter an integer?')
     
-    except Exception:
-        print("An error occurred, please contact the developer.")
+    except Exception as error:
+        print("An error occurred, please contact the developer.", error)
 
 
 if __name__ == "__main__":
