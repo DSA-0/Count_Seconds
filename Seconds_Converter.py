@@ -1,5 +1,5 @@
 # This basic program is a seconds converter: you enter with integer number and receive its larger time magnitude
-                                                                        #values as for example: decades, days, hours.
+                                                           # values as for example: decades, days, hours, etc...
 
 
 def main():
