@@ -3,7 +3,7 @@
 
 magnums = [[' century(s), ', 3155760000], [' decade(s), ', 315352800], [' year(s), ', 31536000],
           [' month(s), ', 2626560], [' week(s), ', 604800], [' day(s), ', 86400], [' hour(s), ', 3600],
-          [' minute(s) e ', 60], [' second(s).']]  # -> List of time magnitude and yours respective seconds.
+          [' minute(s) and ', 60], [' second(s).']]  # -> List of time magnitude and yours respective seconds.
 
 response = ''  # -> Here is the answer that will be constructed as per the calculations.
 
