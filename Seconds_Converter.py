@@ -4,17 +4,24 @@
 
 def main():
     try:
-        start = int(input(f'Please, enter with integer number for conversion: '))
-
-        century = start // 3155760000  # -> seconds in one day (as SID) multiplied per 36525 ((365 * 10) + 25)
-        decade = (start % 3155760000) // 315352800  # -> SID  multiplied per 3652 ((365 * 10) + 2)
-        year = ((start % 3155760000) % 315352800) // 31536000  # -> SID  multiplied per 365
-        month = (((start % 3155760000) % 315352800) % 31536000) // 2626560  # -> SID multiplied per 30.4 (365/12)
-        week = ((((start % 3155760000) % 315352800) % 31536000) % 2626560) // 604800  # ->  SID multiplied per 7
-        day = (((((start % 3155760000) % 315352800) % 31536000) % 2626560) % 604800) // 86400  # -> seconds in one hour * 24
-        hour = ((((((start % 3155760000) % 315352800) % 31536000) % 2626560) % 604800) % 86400) // 3600  # -> 60 * 60
-        minute = (((((((start % 3155760000) % 315352800) % 31536000) % 2626560) % 604800) % 86400) // 3600) // 60
-        second = (((((((start % 3155760000) % 315352800) % 31536000) % 2626560) % 604800) % 86400) // 3600) % 60
+        start = int(input('Please, enter with integer number for conversion: '))
+                                       # -> SID = Seconds In a Day = 60 * 60 * 24 = 86400
+        century = start // 3155760000  # -> SID * 36525 (result of: (365 * 100) + 25)
+        aux1 = start % 3155760000  # -> all 'aux' saves the remaining value of the previous calculation
+        decade = aux1 // 315352800  # -> SID * 3652 (result of: (365 * 10) + 2)
+        aux2 = aux1 % 315352800
+        year = aux2 // 31536000  # -> SID * 365
+        aux3 = aux2 % 31536000
+        month = aux3 // 2626560  # -> SID * 30.4 (rounding 365/12)
+        aux4 = aux3 % 2626560
+        week = aux4 // 604800  # ->  SID * 7
+        aux5 = aux4 % 604800
+        day = aux5 // 86400  # -> SID
+        aux6 = aux5 % 86400
+        hour = aux6 // 3600  # -> 60 * 60
+        aux7 = aux6 % 3600
+        minute = aux7 // 60
+        second = aux7 % 60
 
         print("\nYour entry corresponds to...\n")
         print(century, "century(s),", decade, "decade(s),", year, "year(s),", month, "month(s),", week, "week(s),", day,
